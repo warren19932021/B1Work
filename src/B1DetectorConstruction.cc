@@ -35,7 +35,7 @@
 #include "G4Cons.hh"
 #include "G4Orb.hh"
 #include "G4Sphere.hh"
-#include "G4Trd.hh"
+#include "G4Tubs.hh"
 #include "G4LogicalVolume.hh"
 #include "G4PVPlacement.hh"
 #include "G4SystemOfUnits.hh"
@@ -115,7 +115,7 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
                     0,                       //copy number
                     checkOverlaps);          //overlaps checking
  
-  //     
+  /*/     
   // Shape 1
   //  
   G4Material* shape1_mat = nist->FindOrBuildMaterial("G4_A-150_TISSUE");
@@ -144,6 +144,7 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
                     false,                   //no boolean operation
                     0,                       //copy number
                     checkOverlaps);          //overlaps checking
+//*/
 
   //     
   // Shape 2
@@ -151,14 +152,15 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
   G4Material* shape2_mat = nist->FindOrBuildMaterial("G4_BONE_COMPACT_ICRU");
   G4ThreeVector pos2 = G4ThreeVector(0, -1*cm, 7*cm);
 
-  // Trapezoid shape       
-  G4double shape2_dxa = 12*cm, shape2_dxb = 12*cm;
-  G4double shape2_dya = 10*cm, shape2_dyb = 16*cm;
-  G4double shape2_dz  = 6*cm;      
-  G4Trd* solidShape2 =    
-    new G4Trd("Shape2",                      //its name
-              0.5*shape2_dxa, 0.5*shape2_dxb, 
-              0.5*shape2_dya, 0.5*shape2_dyb, 0.5*shape2_dz); //its size
+  // Tubus shape       
+  G4double shape2_rmin = 0.0*cm;
+  G4double shape2_rmax = 4*cm;
+  G4double shape2_dz  = 12*cm;
+  G4double shape2_sphi = 0.0;
+  G4double shape2_dphi = 2.0*M_PI;
+  G4Tubs* solidShape2 =    
+    new G4Tubs("Shape2",                      //its name
+              shape2_rmin, shape2_rmax, 0.5*shape2_dz, shape2_sphi, shape2_dphi); //its size
                 
   G4LogicalVolume* logicShape2 =                         
     new G4LogicalVolume(solidShape2,         //its solid
