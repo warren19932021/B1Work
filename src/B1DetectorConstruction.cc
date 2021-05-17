@@ -115,21 +115,17 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
                     0,                       //copy number
                     checkOverlaps);          //overlaps checking
  
-  /*/     
-  // Shape 1
+  //     
+  // Shape 1 - source volume
   //  
   G4Material* shape1_mat = nist->FindOrBuildMaterial("G4_A-150_TISSUE");
   G4ThreeVector pos1 = G4ThreeVector(0, 2*cm, -7*cm);
         
   // Conical section shape       
-  G4double shape1_rmina =  0.*cm, shape1_rmaxa = 2.*cm;
-  G4double shape1_rminb =  0.*cm, shape1_rmaxb = 4.*cm;
-  G4double shape1_hz = 3.*cm;
-  G4double shape1_phimin = 0.*deg, shape1_phimax = 360.*deg;
-  G4Cons* solidShape1 =    
-    new G4Cons("Shape1", 
-    shape1_rmina, shape1_rmaxa, shape1_rminb, shape1_rmaxb, shape1_hz,
-    shape1_phimin, shape1_phimax);
+  G4double shape1_dx =  1.0*cm, shape1_dy = 1.0*cm, shape1_dz = 1.0*cm;
+  G4Box* solidShape1 =    
+    new G4Box("Shape1", 
+    0.5*shape1_dx, 0.5*shape1_dy, 0.5*shape1_dz);
                       
   G4LogicalVolume* logicShape1 =                         
     new G4LogicalVolume(solidShape1,         //its solid
