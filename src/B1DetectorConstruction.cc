@@ -136,7 +136,7 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
                     pos1,                    //at position
                     logicShape1,             //its logical volume
                     "Shape1",                //its name
-                    logicEnv,                //its mother  volume
+                    logicWorld,                //its mother  volume
                     false,                   //no boolean operation
                     0,                       //copy number
                     checkOverlaps);          //overlaps checking
@@ -167,7 +167,7 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
                     pos2,                    //at position
                     logicShape2,             //its logical volume
                     "Shape2",                //its name
-                    logicEnv,                //its mother  volume
+                    logicWorld,                //its mother  volume
                     false,                   //no boolean operation
                     0,                       //copy number
                     checkOverlaps);          //overlaps checking

@@ -79,6 +79,7 @@ int main(int argc,char** argv)
   runManager->SetUserInitialization(new B1PhysicsList);
     
   // User action initialization
+  // cares for PrimaryGeneratorAction, RunAction, EventAction, SteppingAction
   runManager->SetUserInitialization(new B1ActionInitialization());
   
   // Initialize visualization

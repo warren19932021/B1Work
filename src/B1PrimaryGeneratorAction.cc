@@ -83,7 +83,7 @@ void B1PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
   if (!fEnvelopeBox)
   {
     G4LogicalVolume* envLV
-      = G4LogicalVolumeStore::GetInstance()->GetVolume("Envelope");
+      = G4LogicalVolumeStore::GetInstance()->GetVolume("Shape1");
     if ( envLV ) fEnvelopeBox = dynamic_cast<G4Box*>(envLV->GetSolid());
   }
 
