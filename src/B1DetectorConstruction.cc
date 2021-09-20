@@ -28,9 +28,11 @@
 /// \brief Implementation of the B1DetectorConstruction class
 
 #include "B1DetectorConstruction.hh"
+#include "FKSD.hh"
 
 #include "G4RunManager.hh"
 #include "G4NistManager.hh"
+#include "G4SDManager.hh"
 #include "G4Box.hh"
 #include "G4Cons.hh"
 #include "G4Orb.hh"
@@ -61,8 +63,8 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
   
   // Envelope parameters
   //
-  G4double env_sizeXY = 20*cm, env_sizeZ = 30*cm;
-  G4Material* env_mat = nist->FindOrBuildMaterial("G4_WATER");
+  G4double env_sizeXY = 200*cm, env_sizeZ = 300*cm;
+  G4Material* env_mat = nist->FindOrBuildMaterial("G4_AIR");
    
   // Option to switch on/off checking of volumes overlaps
   //
@@ -161,7 +163,7 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
   G4LogicalVolume* logicShape2 =                         
     new G4LogicalVolume(solidShape2,         //its solid
                         shape2_mat,          //its material
-                        "Shape2");           //its name
+                        "Shape2_logical");           //its name
                
   new G4PVPlacement(0,                       //no rotation
                     pos2,                    //at position
@@ -180,6 +182,19 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
   //always return the physical World
   //
   return physWorld;
+}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+ 
+void B1DetectorConstruction::ConstructSDandField()
+{
+  // Sensitive detectors
+
+  G4String FKSDname = "FKSD";
+  FKSD* aFKSD = new FKSD(FKSDname, "FKHitsCollection");
+  G4SDManager::GetSDMpointer()->AddNewDetector(aFKSD);
+  // Setting SD to a logical volume by
+  SetSensitiveDetector("Shape2_logical", aFKSD, true);
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
