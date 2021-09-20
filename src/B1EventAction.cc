@@ -32,6 +32,7 @@
 #include "FKHit.hh"
 #include "FKSD.hh"
 
+#include "G4UnitsTable.hh"
 #include "G4Event.hh"
 #include "G4SDManager.hh"
 #include "G4RunManager.hh"
@@ -52,14 +53,14 @@ B1EventAction::~B1EventAction()
 
 void B1EventAction::BeginOfEventAction(const G4Event*)
 {    
-  G4cout << "DEBUG: Begin of event action" << G4endl;
+  //G4cout << "DEBUG: Begin of event action" << G4endl;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 void B1EventAction::EndOfEventAction(const G4Event* evt)
 {   
-    G4cout << "DEBUG: End of event action" << G4endl;
+    //G4cout << "DEBUG: End of event action" << G4endl;
     G4String HCName = "FKHitsCollection";
     FKHitsCollection *FK_HC;
     fFK_HCID = G4SDManager::GetSDMpointer()->GetCollectionID(HCName);
@@ -68,18 +69,19 @@ void B1EventAction::EndOfEventAction(const G4Event* evt)
     //get through all hits of this event
     G4int nofHits = FK_HC->entries();
     if (nofHits == 0) {
-        G4cout << "DEBUG: No hits. return. " << G4endl;
+        //G4cout << "DEBUG: No hits. return. " << G4endl;
         return;
     }
     
-    G4cout << "* DEBUG: event " << evt->GetEventID() << ", HC " << FK_HC->GetName() << ": " << nofHits << " hits" << G4endl;
+    //G4cout << "DEBUG: event " << evt->GetEventID() << ", HC " << FK_HC->GetName() << ": " << nofHits << " hits" << G4endl;
     G4double totEdep = 0.0 * CLHEP::keV;
     for (G4int i = 0; i < nofHits; i++) {
         FKHit *hit = (*FK_HC)[i];
-        hit->Print();
+        //hit->Print();
         totEdep += hit->GetEdep();
-        G4cout << "total Edep: " << totEdep << G4endl;
+        //G4cout << "total Edep: " << totEdep << G4endl;
     }
+    G4cout << nofHits << " hits with total Edep " << G4BestUnit(totEdep, "Energy") << G4endl;
     
     // Fill Histogram...
 }

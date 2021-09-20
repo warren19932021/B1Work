@@ -73,7 +73,7 @@ G4bool FKSD::ProcessHits(G4Step* aStep,
   // energy deposit
   G4double edep = aStep->GetTotalEnergyDeposit();
 
-  G4cout << "DEBUG: Hit with deposited energy " << edep << G4endl;
+  //G4cout << "DEBUG: Hit with deposited energy " << edep << G4endl;
 
   if (edep==0.) return false;
 
@@ -87,7 +87,7 @@ G4bool FKSD::ProcessHits(G4Step* aStep,
 
   fHitsCollection->insert( newHit );
 
-  newHit->Print();
+  //newHit->Print();
 
   return true;
 }
@@ -103,13 +103,15 @@ void FKSD::EndOfEvent(G4HCofThisEvent*)
             << " hits in the sensitive detector volume: " << G4endl;
      for ( G4int i=0; i<nofHits; i++ ) (*fHitsCollection)[i]->Print();
   }
+
+  /*//
   G4double totEdep = 0.0;
   for (G4int i = 0; i < nofHits; i++) {
     FKHit *hit = (*fHitsCollection)[i];
     hit->Print();
     totEdep += hit->GetEdep();
     G4cout << "total Edep: " << totEdep << G4endl;
-  }
+  }//*/
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

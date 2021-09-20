@@ -49,8 +49,8 @@ class GunPrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction
   public:
     GunPrimaryGeneratorAction(
       const G4String& particleName = "mu-",
-      G4double energy = 1.*CLHEP::keV,
-      G4ThreeVector position= G4ThreeVector(0,0,0),
+      G4double energy = 1.*CLHEP::MeV,
+      G4ThreeVector position= G4ThreeVector(0,0,-10*CLHEP::cm),
       G4ThreeVector momentumDirection = G4ThreeVector(0,0,1));    
     ~GunPrimaryGeneratorAction();
 

@@ -60,21 +60,18 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
 {  
   // Get nist material manager
   G4NistManager* nist = G4NistManager::Instance();
-  
-  // Envelope parameters
-  //
-  G4double env_sizeXY = 200*cm, env_sizeZ = 200*cm;
-  //G4Material* env_mat = nist->FindOrBuildMaterial("G4_AIR");
-   
+
+  // Create material(s)
+  // TODO
+
   // Option to switch on/off checking of volumes overlaps
-  //
   G4bool checkOverlaps = true;
 
   //     
   // World
   //
-  G4double world_sizeXY = 1.2*env_sizeXY;
-  G4double world_sizeZ  = 1.2*env_sizeZ;
+  G4double world_sizeXY = 200*cm;
+  G4double world_sizeZ  = 200*cm;
   G4Material* world_mat = nist->FindOrBuildMaterial("G4_AIR");
   
   G4Box* solidWorld =    
@@ -95,37 +92,15 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
                       false,                 //no boolean operation
                       0,                     //copy number
                       checkOverlaps);        //overlaps checking
-                     
-  /*/     
-  // Envelope
-  //  
-  G4Box* solidEnv =    
-    new G4Box("Envelope",                    //its name
-        0.5*env_sizeXY, 0.5*env_sizeXY, 0.5*env_sizeZ); //its size
-      
-  G4LogicalVolume* logicEnv =                         
-    new G4LogicalVolume(solidEnv,            //its solid
-                        env_mat,             //its material
-                        "Envelope");         //its name
-               
-  new G4PVPlacement(0,                       //no rotation
-                    G4ThreeVector(),         //at (0,0,0)
-                    logicEnv,                //its logical volume
-                    "Envelope",              //its name
-                    logicWorld,              //its mother  volume
-                    false,                   //no boolean operation
-                    0,                       //copy number
-                    checkOverlaps);          //overlaps checking
-  //*/
- 
+  
   //     
-  // Shape 1 - source volume
+  // Shape 1 - scintilator
   //  
-  G4Material* shape1_mat = nist->FindOrBuildMaterial("G4_A-150_TISSUE");
-  G4ThreeVector pos1 = G4ThreeVector(0, 2*cm, -7*cm);
+  G4Material* shape1_mat = nist->FindOrBuildMaterial("G4_Bi");
+  G4ThreeVector pos1 = G4ThreeVector(1*cm, 0, -2*cm);
         
   // Conical section shape       
-  G4double shape1_dx =  1.0*cm, shape1_dy = 1.0*cm, shape1_dz = 1.0*cm;
+  G4double shape1_dx =  10.0*cm, shape1_dy = 10.0*cm, shape1_dz = 1.0*cm;
   G4Box* solidShape1 =    
     new G4Box("Shape1", 
     0.5*shape1_dx, 0.5*shape1_dy, 0.5*shape1_dz);
@@ -149,7 +124,7 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
   // Shape 2
   //
   G4Material* shape2_mat = nist->FindOrBuildMaterial("G4_Ge");
-  G4ThreeVector pos2 = G4ThreeVector(0, -1*cm, 7*cm);
+  G4ThreeVector pos2 = G4ThreeVector(0, 0, 7*cm);
 
   // Tubus shape       
   G4double shape2_rmin = 0.0*cm;
