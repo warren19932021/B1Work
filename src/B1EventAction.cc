@@ -29,16 +29,18 @@
 
 #include "B1EventAction.hh"
 #include "B1RunAction.hh"
+#include "FKHit.hh"
+#include "FKSD.hh"
 
 #include "G4Event.hh"
+#include "G4SDManager.hh"
 #include "G4RunManager.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 B1EventAction::B1EventAction(B1RunAction* runAction)
 : G4UserEventAction(),
-  fRunAction(runAction),
-  fEdep(0.)
+  fRunAction(runAction)
 {} 
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -50,15 +52,54 @@ B1EventAction::~B1EventAction()
 
 void B1EventAction::BeginOfEventAction(const G4Event*)
 {    
-  fEdep = 0.;
+  G4cout << "DEBUG: Begin of event action" << G4endl;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-void B1EventAction::EndOfEventAction(const G4Event*)
+void B1EventAction::EndOfEventAction(const G4Event* evt)
 {   
-  // accumulate statistics in run action
-  fRunAction->AddEdep(fEdep);
+    G4cout << "DEBUG: End of event action" << G4endl;
+    G4String HCName = "FKHitsCollection";
+    FKHitsCollection *FK_HC;
+    fFK_HCID = G4SDManager::GetSDMpointer()->GetCollectionID(HCName);
+    // Get hits collection
+    FK_HC = GetHitsCollection(fFK_HCID, evt);
+    //get through all hits of this event
+    G4int nofHits = FK_HC->entries();
+    if (nofHits == 0) {
+        G4cout << "DEBUG: No hits. return. " << G4endl;
+        return;
+    }
+    
+    G4cout << "* DEBUG: event " << evt->GetEventID() << ", HC " << FK_HC->GetName() << ": " << nofHits << " hits" << G4endl;
+    G4double totEdep = 0.0 * CLHEP::keV;
+    for (G4int i = 0; i < nofHits; i++) {
+        FKHit *hit = (*FK_HC)[i];
+        hit->Print();
+        totEdep += hit->GetEdep();
+        G4cout << "total Edep: " << totEdep << G4endl;
+    }
+    
+    // Fill Histogram...
+}
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
+FKHitsCollection* B1EventAction::GetHitsCollection(G4int hcID, const G4Event* event) const
+{
+  FKHitsCollection* hitsCollection
+    = static_cast<FKHitsCollection*>(
+        event->GetHCofThisEvent()->GetHC(hcID));
+
+  if ( ! hitsCollection ) {
+    G4ExceptionDescription msg;
+    msg << "Cannot access hitsCollection ID " << hcID;
+    G4Exception("EventAction::GetHitsCollection()",
+      "MyCode0003", FatalException, msg);
+  }
+
+  return hitsCollection;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

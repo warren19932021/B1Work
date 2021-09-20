@@ -63,8 +63,8 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
   
   // Envelope parameters
   //
-  G4double env_sizeXY = 200*cm, env_sizeZ = 300*cm;
-  G4Material* env_mat = nist->FindOrBuildMaterial("G4_AIR");
+  G4double env_sizeXY = 200*cm, env_sizeZ = 200*cm;
+  //G4Material* env_mat = nist->FindOrBuildMaterial("G4_AIR");
    
   // Option to switch on/off checking of volumes overlaps
   //
@@ -96,7 +96,7 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
                       0,                     //copy number
                       checkOverlaps);        //overlaps checking
                      
-  //     
+  /*/     
   // Envelope
   //  
   G4Box* solidEnv =    
@@ -116,6 +116,7 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
                     false,                   //no boolean operation
                     0,                       //copy number
                     checkOverlaps);          //overlaps checking
+  //*/
  
   //     
   // Shape 1 - source volume
@@ -147,7 +148,7 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
   //     
   // Shape 2
   //
-  G4Material* shape2_mat = nist->FindOrBuildMaterial("G4_BONE_COMPACT_ICRU");
+  G4Material* shape2_mat = nist->FindOrBuildMaterial("G4_Ge");
   G4ThreeVector pos2 = G4ThreeVector(0, -1*cm, 7*cm);
 
   // Tubus shape       

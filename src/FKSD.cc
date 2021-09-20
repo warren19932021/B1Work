@@ -73,6 +73,8 @@ G4bool FKSD::ProcessHits(G4Step* aStep,
   // energy deposit
   G4double edep = aStep->GetTotalEnergyDeposit();
 
+  G4cout << "DEBUG: Hit with deposited energy " << edep << G4endl;
+
   if (edep==0.) return false;
 
   FKHit* newHit = new FKHit();
@@ -85,7 +87,7 @@ G4bool FKSD::ProcessHits(G4Step* aStep,
 
   fHitsCollection->insert( newHit );
 
-  //newHit->Print();
+  newHit->Print();
 
   return true;
 }

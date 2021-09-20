@@ -30,8 +30,8 @@
 #include "B1ActionInitialization.hh"
 #include "GunPrimaryGeneratorAction.hh"
 #include "G4ThreeVector.hh"
-//#include "RunAction.hh"
-//#include "EventAction.hh"
+#include "B1RunAction.hh"
+#include "B1EventAction.hh"
 //#include "SteppingAction.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -57,13 +57,13 @@ void B1ActionInitialization::BuildForMaster() const
 
 void B1ActionInitialization::Build() const
 {
-  SetUserAction(new GunPrimaryGeneratorAction("e-"));
+  SetUserAction(new GunPrimaryGeneratorAction("gamma"));
 
-//  B1RunAction* runAction = new B1RunAction;
-//  SetUserAction(runAction);
+  B1RunAction* runAction = new B1RunAction;
+  SetUserAction(runAction);
   
-//  B1EventAction* eventAction = new B1EventAction(runAction);
-//  SetUserAction(eventAction);
+  B1EventAction* eventAction = new B1EventAction(runAction);
+  SetUserAction(eventAction);
   
 //  SetUserAction(new B1SteppingAction(eventAction));
 }  
