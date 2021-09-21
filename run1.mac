@@ -19,4 +19,4 @@
 /gun/particle mu-
 /gun/energy 1 MeV
 #
-/run/beamOn 5
+/run/beamOn 100
