@@ -34,14 +34,18 @@
 
 /// Action initialization class.
 
+class HistoManager;
+
 class B1ActionInitialization : public G4VUserActionInitialization
 {
   public:
-    B1ActionInitialization();
+    B1ActionInitialization(HistoManager* histo);
     virtual ~B1ActionInitialization();
 
     //virtual void BuildForMaster() const;
     virtual void Build() const;
+  private:
+    HistoManager *histoMan;
 };
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

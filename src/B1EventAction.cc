@@ -28,9 +28,10 @@
 /// \brief Implementation of the B1EventAction class
 
 #include "B1EventAction.hh"
-#include "B1RunAction.hh"
+#include "RunAction.hh"
 #include "FKHit.hh"
 #include "FKSD.hh"
+#include "HistoManager.hh"
 
 #include "G4UnitsTable.hh"
 #include "G4Event.hh"
@@ -39,10 +40,14 @@
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-B1EventAction::B1EventAction(B1RunAction* runAction)
+B1EventAction::B1EventAction(RunAction* runAction, HistoManager* histo)
 : G4UserEventAction(),
-  fRunAction(runAction)
-{} 
+fRunAction(runAction),
+histoManager(histo)
+{
+  //fRunAction = runAction;
+  //histoManager = histo;
+} 
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
@@ -84,6 +89,7 @@ void B1EventAction::EndOfEventAction(const G4Event* evt)
     G4cout << nofHits << " hits with total Edep " << G4BestUnit(totEdep, "Energy") << G4endl;
     
     // Fill Histogram...
+    histoManager->Fill1DEdep(totEdep);
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

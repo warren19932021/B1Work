@@ -34,7 +34,8 @@
 #include "G4UserEventAction.hh"
 #include "globals.hh"
 
-class B1RunAction;
+class RunAction;
+class HistoManager;
 
 /// Event action class
 ///
@@ -42,14 +43,15 @@ class B1RunAction;
 class B1EventAction : public G4UserEventAction
 {
   public:
-    B1EventAction(B1RunAction* runAction);
+    B1EventAction(RunAction* runAction, HistoManager* histo);
     virtual ~B1EventAction();
 
     virtual void BeginOfEventAction(const G4Event* event);
     virtual void EndOfEventAction(const G4Event* event);
 
   private:
-    B1RunAction* fRunAction;
+    RunAction*  fRunAction;
+    HistoManager* histoManager;
     // methods
     FKHitsCollection* GetHitsCollection(G4int hcID,
                                             const G4Event* event) const;

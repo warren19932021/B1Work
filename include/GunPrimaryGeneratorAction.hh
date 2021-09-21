@@ -39,6 +39,7 @@
 class G4ParticleGun;
 class G4Event;
 
+
 /// \ingroup primary_generator
 /// \brief The primary generator class with particle gun
 ///

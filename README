@@ -75,16 +75,16 @@
    The energy deposited is collected step by step for a selected volume
    in B1SteppingAction and accumulated event by event in B1EventAction.
 
-   At end of event, the value acummulated in B1EventAction is added in B1RunAction
+   At end of event, the value acummulated in B1EventAction is added in RunAction
    and summed over the whole run (see B1EventAction::EndOfevent()).
 
-   Total dose deposited is computed at B1RunAction::EndOfRunAction(), 
+   Total dose deposited is computed at RunAction::EndOfRunAction(), 
    and printed together with informations about the primary particle.
    In multi-threading mode the energy accumulated in G4Accumulable objects per
-   workers is merged to the master in B1RunAction::EndOfRunAction() and the final
+   workers is merged to the master in RunAction::EndOfRunAction() and the final
    result is printed on the screen.
    
-   G4Parameter<G4double> type instead of G4double type is used for the B1RunAction
+   G4Parameter<G4double> type instead of G4double type is used for the RunAction
    data members in order to facilitate merging of the values accumulated on workers 
    to the master.  Currently the accumulables have to be registered to G4AccumulablesManager
    and G4AccumulablesManager::Merge() has to be called from the users code. This is planned

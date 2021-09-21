@@ -31,6 +31,7 @@
 #include "FTFP_BERT.hh"
 #include "B1PhysicsList.hh"
 #include "B1ActionInitialization.hh"
+#include "HistoManager.hh"
 
 #ifdef G4MULTITHREADED
 #include "G4MTRunManager.hh"
@@ -80,10 +81,14 @@ int main(int argc,char** argv)
   //auto physicsList = new B1PhysicsList;
   auto physicsList = new FTFP_BERT;
   runManager->SetUserInitialization(physicsList);
+
+  // HistoManager will be passed to action classes via ActionInitalization()
+  HistoManager*           histo = new HistoManager();
     
   // User action initialization
   // cares for PrimaryGeneratorAction, RunAction, EventAction, SteppingAction
-  runManager->SetUserInitialization(new B1ActionInitialization());
+  B1ActionInitialization*   action = new B1ActionInitialization(histo);
+  runManager->SetUserInitialization(action);
   
   // Initialize visualization
   //

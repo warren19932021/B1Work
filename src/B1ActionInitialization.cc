@@ -29,15 +29,16 @@
 
 #include "B1ActionInitialization.hh"
 #include "GunPrimaryGeneratorAction.hh"
+#include "HistoManager.hh"
 #include "G4ThreeVector.hh"
-#include "B1RunAction.hh"
+#include "RunAction.hh"
 #include "B1EventAction.hh"
 //#include "SteppingAction.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-B1ActionInitialization::B1ActionInitialization()
- : G4VUserActionInitialization()
+B1ActionInitialization::B1ActionInitialization(HistoManager *histo)
+    : G4VUserActionInitialization(), histoMan(histo)
 {}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -49,7 +50,7 @@ B1ActionInitialization::~B1ActionInitialization()
 /*
 void B1ActionInitialization::BuildForMaster() const
 {
-  B1RunAction* runAction = new B1RunAction;
+  RunAction* runAction = new RunAction;
   SetUserAction(runAction);
 }//*/
 
@@ -59,10 +60,10 @@ void B1ActionInitialization::Build() const
 {
   SetUserAction(new GunPrimaryGeneratorAction("gamma"));
 
-  B1RunAction* runAction = new B1RunAction;
+  RunAction* runAction = new RunAction(histoMan);
   SetUserAction(runAction);
   
-  B1EventAction* eventAction = new B1EventAction(runAction);
+  B1EventAction* eventAction = new B1EventAction(runAction, histoMan);
   SetUserAction(eventAction);
   
 //  SetUserAction(new B1SteppingAction(eventAction));
