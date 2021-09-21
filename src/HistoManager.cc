@@ -23,134 +23,62 @@
 // * acceptance of all terms of the Geant4 Software license.          *
 // ********************************************************************
 //
-// HistoManager.cc,v 1.0 2013-04-23 14:00:00 Toni Kögler$
-
+/// \file HistoManager.cc
+/// \brief Implementation of the HistoManager class
 //
+// 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 #include "HistoManager.hh"
 #include "G4UnitsTable.hh"
-#include "G4String.hh"
 
-//root includes
-#include "TFile.h"
-#include "TDirectory.h"
-#include "TTree.h"
-#include "TH1F.h"
-#include "TH2F.h"
-#include "TROOT.h"
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-//std c- includes
-#include <iostream>
-#include <time.h>
-
-
-
-using namespace std;
-
-//static HistoManager* instance = 0;
-
-////////////////////////////////////////////////////////////////////////////////
 HistoManager::HistoManager()
-    : fWriteHisto(true),
-      fResFilename("results/out.root")
-{  // Creating the analysis factory
-     G4cout << " HistoManager::HistoManager() :"
-           << "  creating Histograms."
-           << G4endl;
+  : fFileName("rdecay01")
+{
+  Book();
 }
+
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 HistoManager::~HistoManager()
 {
-    if (!fWriteHisto) return;
-    //remove histograms from memory
-    delete pH1Edep;
-}
-////////////////////////////////////////////////////////////////////////////////
-//______________________________________________________________________________
-void HistoManager::book()
-{//open the root file and create a directory structure in it
- // This method is called at the beginning of a run.
-    //G4cout << "******************************************" << G4endl
-    //       << "* DEBUG: HistoManager::book() is called! *" << G4endl
-    //       << "******************************************" << G4endl;
-
-    if (!fWriteHisto)
-        return;
-
-    //ROOT::EnableThreadSafety();
-    f = TFile::Open(fResFilename.c_str(), "RECREATE");
-
-    CreateHistograms();
-
-    G4cout << "\n----> Histogram file is opened in " << fResFilename << G4endl;
-
+  delete G4AnalysisManager::Instance();
 }
 
-//______________________________________________________________________________
-void HistoManager::SaveFile()
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+
+void HistoManager::Book()
 {
-    if (fWriteHisto) {   
-        G4cout << "Write histograms to TFile" << G4endl;
-        //f->cd();
-        pH1Edep->Write("Edep", TObject::kOverwrite);
-        //pH1Edep->Write();
-    }
+  // Create or get analysis manager
+  // The choice of analysis technology is done via selection of a namespace
+  // in HistoManager.hh
+  G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
+  analysisManager->SetFileName(fFileName);
+  analysisManager->SetVerboseLevel(1);
+  analysisManager->SetActivation(true);     //enable inactivation of histograms
+  
+  // Define histograms start values
+  const G4int kMaxHisto = 2;
+  const G4String id[] = {"0", "1"};
+  const G4String title[] = 
+          { "dummy",                                    //0
+            "gamma energy spectrum",                    //1
+          };
 
-    if (fWriteHisto) { // (WriteTTree || fWriteHisto)
-        G4cout << "\n----> Saving progress..."  << G4endl;
-        //f->Save();
-    }
+  // Default values (to be reset via /analysis/h1/set command)               
+  G4int nbins = 100;
+  G4double vmin = 0.;
+  G4double vmax = 100.;
 
+  // Create all histograms as inactivated 
+  // as we have not yet set nbins, vmin, vmax
+  for (G4int k=0; k<kMaxHisto; k++) {
+    G4int ih = analysisManager->CreateH1(id[k], title[k], nbins, vmin, vmax);
+    analysisManager->SetH1Activation(ih, false);
+  }
 }
 
-//______________________________________________________________________________
-void HistoManager::CloseFile()
-{
-    if (!fWriteHisto)
-        return;
-        
-    SaveFile();
-    f->Close();      // and closing the tree (and the file)
-    G4cout << "\n----> Histogram file closed"  << G4endl;
-
-}
-
-//______________________________________________________________________________
-void HistoManager::SetWriteHisto(G4bool histo)
-{   fWriteHisto = histo;
-    if (fWriteHisto)
-        G4cout << "Enable Histogramming!" << G4endl;
-    else
-        G4cout << "Disable Histogramming!" << G4endl;
-}
-
-//______________________________________________________________________________
-void HistoManager::SetResultsFile(G4String filename)
-{
-    fResFilename = filename;
-}
-
-//______________________________________________________________________________
-void HistoManager::CreateHistograms()
-{//sets up all used histograms
-    G4int nBinsX = 10000; G4double minX = 0.0, maxX = 2000.;
-
-    G4String HistName =  "Edep";
-    G4String HistTitle=  "Energy deposition in sensitive region";
-
-    // define Histogram and set style attributes
-    pH1Edep = new TH1F(HistName, HistTitle, nBinsX, minX, maxX);
-    // x-axis
-    pH1Edep->GetXaxis()->SetTitle("#font[12]{E} / keV");
-    // y-axis
-    pH1Edep->GetYaxis()->SetTitle("#font[12]{N}");
-}
-//______________________________________________________________________________
-void HistoManager::Fill1DEdep(G4double Edep)
-{
-    G4cout << "Fill " << G4BestUnit(Edep, "Energy") << G4endl;
-    pH1Edep->Fill(Edep / CLHEP::keV);
-}
-//______________________________________________________________________________
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
