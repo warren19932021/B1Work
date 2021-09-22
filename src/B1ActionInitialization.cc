@@ -37,8 +37,8 @@
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-B1ActionInitialization::B1ActionInitialization(HistoManager *histo)
-    : G4VUserActionInitialization(), histoMan(histo)
+B1ActionInitialization::B1ActionInitialization()
+    : G4VUserActionInitialization()
 {}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -47,10 +47,9 @@ B1ActionInitialization::~B1ActionInitialization()
 {}
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-/*
 void B1ActionInitialization::BuildForMaster() const
 {
-  RunAction* runAction = new RunAction;
+  RunAction* runAction = new RunAction();
   SetUserAction(runAction);
 }//*/
 
@@ -60,7 +59,7 @@ void B1ActionInitialization::Build() const
 {
   SetUserAction(new GunPrimaryGeneratorAction("gamma"));
 
-  RunAction* runAction = new RunAction(histoMan);
+  RunAction* runAction = new RunAction();
   SetUserAction(runAction);
   
   B1EventAction* eventAction = new B1EventAction(runAction, histoMan);

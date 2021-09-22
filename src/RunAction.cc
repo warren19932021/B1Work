@@ -42,11 +42,11 @@
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-RunAction::RunAction(HistoManager* histo)
+RunAction::RunAction()
 :G4UserRunAction(),
   fHistoManager(0)
 {
-  fHistoManager = histo;
+  fHistoManager = new HistoManager();
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

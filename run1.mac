@@ -15,11 +15,14 @@
 /tracking/verbose 0
 # 
 # 1 MeV muons
-#
-/gun/particle mu-
+#/gun/particle mu-
+#/gun/energy 1 MeV
+# 
+# 1 MeV gammas
+/gun/particle gamma
 /gun/energy 1 MeV
 #
 /analysis/setFileName out
-analysis/h1/set 1 2000 0. 2000. keV
+/analysis/h1/set 1 2000 0. 2000. keV
 #
 /run/beamOn 100

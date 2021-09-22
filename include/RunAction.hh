@@ -46,7 +46,7 @@ class G4Run;
 class RunAction : public G4UserRunAction
 {
   public:
-    RunAction(HistoManager *histo);
+    RunAction();
     virtual ~RunAction();
 
     // virtual G4Run* GenerateRun();

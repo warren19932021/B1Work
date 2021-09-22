@@ -39,10 +39,10 @@ class HistoManager;
 class B1ActionInitialization : public G4VUserActionInitialization
 {
   public:
-    B1ActionInitialization(HistoManager* histo);
+    B1ActionInitialization();
     virtual ~B1ActionInitialization();
 
-    //virtual void BuildForMaster() const;
+    virtual void BuildForMaster() const;
     virtual void Build() const;
   private:
     HistoManager *histoMan;
