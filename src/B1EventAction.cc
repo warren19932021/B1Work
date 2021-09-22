@@ -86,7 +86,7 @@ void B1EventAction::EndOfEventAction(const G4Event* evt)
         totEdep += hit->GetEdep();
         //G4cout << "total Edep: " << totEdep << G4endl;
     }
-    G4cout << nofHits << " hits with total Edep " << G4BestUnit(totEdep, "Energy") << G4endl;
+    //G4cout << nofHits << " hits with total Edep " << G4BestUnit(totEdep, "Energy") << G4endl;
     
     // Fill Histogram...
     G4AnalysisManager::Instance()->FillH1(1, totEdep);

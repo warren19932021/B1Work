@@ -25,4 +25,4 @@
 /analysis/setFileName out
 /analysis/h1/set 1 2000 0. 2000. keV
 #
-/run/beamOn 100
+/run/beamOn 1000
