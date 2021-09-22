@@ -23,52 +23,65 @@
 // * acceptance of all terms of the Geant4 Software license.          *
 // ********************************************************************
 //
-//
 /// \file RunAction.cc
 /// \brief Implementation of the RunAction class
+//
+// 
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 #include "RunAction.hh"
-#include "B1PrimaryGeneratorAction.hh"
-#include "B1DetectorConstruction.hh"
+#include "GunPrimaryGeneratorAction.hh"
 #include "HistoManager.hh"
 
-#include "G4RunManager.hh"
 #include "G4Run.hh"
-#include "G4AccumulableManager.hh"
-#include "G4LogicalVolumeStore.hh"
-#include "G4LogicalVolume.hh"
 #include "G4UnitsTable.hh"
+#include "G4PhysicalConstants.hh"
 #include "G4SystemOfUnits.hh"
+#include <iomanip>
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-RunAction::RunAction(HistoManager *histo)
-    : G4UserRunAction()
+RunAction::RunAction(HistoManager* histo)
+:G4UserRunAction(),
+  fHistoManager(0)
 {
-  histoManager = histo;
+  fHistoManager = histo;
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 RunAction::~RunAction()
-{}
-
+{ 
+  delete fHistoManager;
+}
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 void RunAction::BeginOfRunAction(const G4Run*)
 { 
-  //G4cout << "Begin of run action" << G4endl;
-
-  // create file and folder structure
-  histoManager->book();
+  //histograms
+  //
+  G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
+  if ( analysisManager->IsActive() ) {
+    G4cout << "Analysis manager is active. Open file" << G4endl;
+    analysisManager->OpenFile();
+  }
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
-void RunAction::EndOfRunAction(const G4Run* run)
+void RunAction::EndOfRunAction(const G4Run*)
 {
-  //G4cout << "End of run action" << G4endl;
-  histoManager->CloseFile();
+ // if (isMaster) fRun->EndOfRun();
+            
+ //save histograms
+ //
+ G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
+ if ( analysisManager->IsActive() ) {
+   //G4cout << "Analysis manager is active. Write and close" << G4endl;
+  analysisManager->Write();
+  analysisManager->CloseFile();
+ } 
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
