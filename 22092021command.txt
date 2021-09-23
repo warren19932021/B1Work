@@ -1,0 +1,1000 @@
+ 1026  ./program 
+ 1027  vi main.cpp
+ 1028  make 
+ 1029  ./program 
+ 1030  vi main.cpp
+ 1031  make 
+ 1032  ./program 
+ 1033  vi main.cpp
+ 1034  make 
+ 1035  ./program 
+ 1036  vi main.cpp
+ 1037  make 
+ 1038  ./program 
+ 1039  vi main.cpp
+ 1040  make 
+ 1041  ./program 
+ 1042  vi main.cpp
+ 1043  make 
+ 1044  vi main.cpp
+ 1045  make 
+ 1046  ./program 
+ 1047  vi main.cpp
+ 1048  make 
+ 1049  vi main.cpp
+ 1050  root 
+ 1051  root -l 
+ 1052  vi main.cpp
+ 1053  root 
+ 1054  vi main.cpp
+ 1055  make 
+ 1056  vi main.cpp
+ 1057  make 
+ 1058  vi main.cpp
+ 1059  make 
+ 1060  ./program 
+ 1061  vi main.cpp
+ 1062  lk
+ 1063  ll
+ 1064  make clean 
+ 1065  ll
+ 1066  vi main.cppbak 
+ 1067  vi Makefile
+ 1068  vi Makefilebak 
+ 1069  cd bak/
+ 1070  ll
+ 1071  vi main.cpp 
+ 1072  cd ..
+ 1073  ll
+ 1074  rm main.cppbak 
+ 1075  ll
+ 1076  vi main.cpp 
+ 1077  cp main.cpp main.cppbak
+ 1078  ll
+ 1079  vi main.cpp
+ 1080  ll
+ 1081  mv Makefile Makefilebak1
+ 1082  ll
+ 1083  mv Makefilebak Makefile
+ 1084  ll
+ 1085  vi Makefile
+ 1086  vi src/Shape.cpp 
+ 1087  vi Makefile
+ 1088  make 
+ 1089  vi main.cpp
+ 1090  ls
+ 1091  cd c_plus_plus_task/calculate_area/
+ 1092  ls
+ 1093  cd bak1/
+ 1094  ls
+ 1095  ll
+ 1096  ls
+ 1097  mkdir bak
+ 1098  cp main.cppbaknew Makefile bak/
+ 1099  cd bak/
+ 1100  ll
+ 1101  mv main.cppbaknew main.cpp
+ 1102  ls
+ 1103  make 
+ 1104  ./program 
+ 1105  make 
+ 1106  vi main.cpp 
+ 1107  make 
+ 1108  ./program 
+ 1109  cd ..
+ 1110  ls
+ 1111  make 
+ 1112  ./program 
+ 1113  make 
+ 1114  ./program 
+ 1115  make 
+ 1116  ./program 
+ 1117  cd ..
+ 1118  ls
+ 1119  make 
+ 1120  lsa
+ 1121  ls
+ 1122  mkdir test
+ 1123  cp main.cpp  test/
+ 1124  cp -r include test/
+ 1125  cp -r src/ test/
+ 1126  ll
+ 1127  cd test/
+ 1128  ls
+ 1129  make 
+ 1130  cp ../Makefile  .
+ 1131  make 
+ 1132  cd 
+ 1133  cd GEANT4/test/toymodel/build/
+ 1134  ll
+ 1135  cd ../include/
+ 1136  vi SensitiveDetector
+ 1137  vi SensitiveDetector.hh 
+ 1138  cd ../src/
+ 1139  vi SensitiveDetector.cc 
+ 1140  cd ../../../../Programs/tCompile/
+ 1141  ll
+ 1142  vi main.cpp 
+ 1143  pwd
+ 1144  vi include/Class1.h 
+ 1145  cd ../c_plus_plus_task/guessing_number_game/2nd_version/
+ 1146  vi main.cpp
+ 1147  vi ../1st_version/main.cpp 
+ 1148  vi ../3rd_version/main.cppbak 
+ 1149  vi main.cppbak 
+ 1150  vi ../1st_version/main.cpp 
+ 1151  cd ../
+ 1152  ll
+ 1153  cd ..
+ 1154  ll
+ 1155  cd ..
+ 1156  ll
+ 1157  cd argv_argc/
+ 1158  ll
+ 1159  vi main.cpp 
+ 1160  ./output 
+ 1161  ./output 23 45
+ 1162  ./output 
+ 1163  vi main.cpp 
+ 1164  cd ..
+ 1165  ll
+ 1166  cd tCompile
+ 1167  ll
+ 1168  vi main.cpp 
+ 1169  ll
+ 1170  vi README 
+ 1171  g++ -c main.cpp -o main.o
+ 1172  g++ -c src/Class1.cpp  -o class.o
+ 1173  ll
+ 1174  g++ main.o class.o -o program
+ 1175  ll
+ 1176  ./program 
+ 1177  vi main.cpp 
+ 1178  g++ -c main.cpp -o main.o
+ 1179  g++ main.o class.o -o program
+ 1180  ./program 
+ 1181  ./program hah  de 
+ 1182  vi main.cpp 
+ 1183  cd ..
+ 1184  ll
+ 1185  cd ../GEANT4/test/
+ 1186  ll
+ 1187  ls -lrt
+ 1188  cd HPGe_simulation-master/
+ 1189  ls
+ 1190  vi README.md 
+ 1191  ls
+ 1192  cd build/
+ 1193  ll
+ 1194  cmake ..
+ 1195  make 
+ 1196  vi ../src/HistoManager.cc 
+ 1197  make -j3
+ 1198  vi ../include/HistoManager.hh 
+ 1199  vi ../src/HistoManager.cc 
+ 1200  make -j3
+ 1201  vi ../include/HistoManager.hh 
+ 1202  make -j3
+ 1203  vi ../include/HistoManager.hh 
+ 1204  make -j3
+ 1205  vi ../include/HistoManager.hh 
+ 1206  cd ../..
+ 1207  ls -lrt
+ 1208  cd Geant4Note-master/
+ 1209  ll
+ 1210  vi README.md 
+ 1211  vi SUMMARY.md 
+ 1212  cd pdf/
+ 1213  ls
+ 1214  cd Guide/
+ 1215  ls
+ 1216  cd 41004/
+ 1217  ls
+ 1218  cd ../../..
+ 1219  ll
+ 1220  cd build/
+ 1221  ll
+ 1222  cmake ..
+ 1223  cd ..
+ 1224  ll
+ 1225  vi test.md 
+ 1226  ll
+ 1227  ls
+ 1228  vi auto.sh 
+ 1229  cd PhysicsProcesses/
+ 1230  ls
+ 1231  cd ../..
+ 1232  ll
+ 1233  ls -lrt
+ 1234  cd ComptonSim-master/
+ 1235  ls
+ 1236  ll
+ 1237  vi README.md 
+ 1238  cd build/
+ 1239  ll
+ 1240  cmake ..
+ 1241  make -j3
+ 1242  cd ..
+ 1243  ll
+ 1244  vi README.md 
+ 1245  vi ComptonSim.cc 
+ 1246  cd build/
+ 1247  cmake ..
+ 1248  cd ../../HPGe_simulation-master/
+ 1249  ll
+ 1250  cd build/
+ 1251  make -j3
+ 1252  vi ../src/HistoManager.cc 
+ 1253  cd ~/Programs/c_plus_plus_task/guessing_number_game/3rd_version/
+ 1254  ll
+ 1255  g++ main.o class.o -o program
+ 1256  g++ -c main.cpp  -o main.o
+ 1257  g++ -c src/GuessingGame.cpp -o gu
+ 1258  vi include/GuessingGame.h 
+ 1259  vi main.cpp 
+ 1260  vi include/GuessingGame.h 
+ 1261  vi src/GuessingGame.cpp
+ 1262  g++ -c src/GuessingGame.cpp -o gu
+ 1263  vi src/GuessingGame.cpp
+ 1264  g++ -c src/GuessingGame.cpp -o gu
+ 1265  g++ -c main.cpp  -o main.o
+ 1266  g++ main.o gu -o output
+ 1267  ./output 
+ 1268  ll
+ 1269  vi main.cpp 
+ 1270  g++ -c main.cpp  -o main.o
+ 1271  g++ -c src/GuessingGame.cpp -o gu
+ 1272  g++ main.o gu -o output
+ 1273  ./output 
+ 1274  ll
+ 1275  vi main.cpp 
+ 1276  g++ main.o gu -o output
+ 1277  g++ -c src/GuessingGame.cpp -o gu
+ 1278  g++ main.o gu -o output
+ 1279  ./output 
+ 1280  vi main.cpp 
+ 1281  g++ -c src/GuessingGame.cpp -o gu
+ 1282  g++ -c main.cpp  -o main.o
+ 1283  vi include/GuessingGame.h 
+ 1284  g++ -c src/GuessingGame.cpp -o gu
+ 1285  g++ main.o gu -o output
+ 1286  ./output 
+ 1287  ll
+ 1288  vi main.cpp 
+ 1289  cd -
+ 1290  ll
+ 1291  cd ../..
+ 1292  ls -lrt
+ 1293  cd -
+ 1294  cmake ..
+ 1295  make -j3
+ 1296  cd ../..
+ 1297  ll
+ 1298  ls -lrt
+ 1299  cd Geant4Note-master/
+ 1300  ls
+ 1301  ll
+ 1302  cd ..
+ 1303  ls -lrt
+ 1304  cd ComptonSim-master/
+ 1305  ll
+ 1306  cd build/
+ 1307  cmake ..
+ 1308  cmake --version 
+ 1309  cd ../..
+ 1310  ll
+ 1311  ls -lrt
+ 1312  cd GEANT4_HPGe_Simulaton-master/
+ 1313  ls
+ 1314  ll
+ 1315  cd HPGeFolder_build
+ 1316  ll
+ 1317  cmake ..
+ 1318  ./exampleB4a 
+ 1319  ll ..
+ 1320  cd ..
+ 1321  vi readme.md 
+ 1322  cd HPGeFolder
+ 1323  ls
+ 1324  cd bbu
+ 1325  cd build/
+ 1326  ll
+ 1327  cmake ..
+ 1328  ll
+ 1329  ./exampleB4a 
+ 1330  cd ..
+ 1331  ll
+ 1332  ci CMakeLists.txt 
+ 1333  vi CMakeLists.txt 
+ 1334  cmake --update
+ 1335  cmake --help
+ 1336  ll
+ 1337  cd 
+ 1338  cd -
+ 1339  ll
+ 1340  cd build/
+ 1341  cmake .
+ 1342  cmake ..
+ 1343  cmake min ..
+ 1344  cmake2.8.12 min ..
+ 1345  cmake2.8.12  ..
+ 1346  cmake 2.8.12  ..
+ 1347  vi ../CMakeLists.txt 
+ 1348  cmake ..
+ 1349  vi ../CMakeLists.txt 
+ 1350  cmake --version 
+ 1351  cd ../../../../
+ 1352  cd ../Programs/c_plus_plus_task/guessing_number_game/3rd_version/
+ 1353  ll
+ 1354  cd backup3/test/
+ 1355  ll
+ 1356  vi main.cpp 
+ 1357  vi src/GuessingGame.cpp
+ 1358  vi include/GuessingGame.h 
+ 1359  cd ..
+ 1360  ll
+ 1361  cd ../..
+ 1362  ll
+ 1363  cd ../
+ 1364  ll
+ 1365  mkdir examples_from_heima
+ 1366  cd examples_from_heima/
+ 1367  ll
+ 1368  mkdir P111
+ 1369  cd P111/
+ 1370  ll
+ 1371  vi main.cpp
+ 1372  cp /home/iktp/Programs/c_plus_plus_task/calculate_area/CMakeLists.txt .
+ 1373  ll
+ 1374  vi CMakeLists.txt 
+ 1375  make 
+ 1376  vi CMakeLists.txt 
+ 1377  rm CMakeLists.txt 
+ 1378  cp /home/iktp/Programs/c_plus_plus_task/calculate_area/Makefile .
+ 1379  vi Makefile 
+ 1380  make 
+ 1381  ls
+ 1382  vi main.cpp 
+ 1383  make 
+ 1384  ./program 
+ 1385  vi main.cpp 
+ 1386  ./program 
+ 1387  make 
+ 1388  ./program 
+ 1389  vi main.cpp 
+ 1390  make 
+ 1391  vi main.cpp 
+ 1392  ll
+ 1393  cd ../
+ 1394  ll
+ 1395  cd ..
+ 1396  ll
+ 1397  cd calculate_area/
+ 1398  ll
+ 1399  v main.cpp 
+ 1400  vi main.cpp 
+ 1401  pwd
+ 1402  ll
+ 1403  pwd
+ 1404  ll
+ 1405  vi Makefile 
+ 1406  cd ../c_plus_plus_task/
+ 1407  ls
+ 1408  cd guessing_number_game/3rd_version/
+ 1409  vi main.cpp 
+ 1410  vi include/GuessingGame.h 
+ 1411  vi src/GuessingGame.cpp
+ 1412  vi include/GuessingGame.h 
+ 1413  vi main.cpp 
+ 1414  vi include/GuessingGame.h 
+ 1415  vi main.cpp 
+ 1416  vi src/GuessingGame.cpp
+ 1417  vi main.cpp 
+ 1418  vi Makefile 
+ 1419  vi ../../../tCompile/Makefile 
+ 1420  vi main.cpp 
+ 1421  cd /home/iktp/Programs/c_plus_plus_task/calculate_area
+ 1422  cd ..
+ 1423  ll
+ 1424  cd examples_from_heima/
+ 1425  ll
+ 1426  cd P138/
+ 1427  ll
+ 1428  vi main.cpp 
+ 1429  cd ..
+ 1430  ll
+ 1431  vi P135/main.cpp 
+ 1432  vi P140/main.cpp 
+ 1433  vi P139/main.cpp 
+ 1434  vi P138/main.cpp 
+ 1435  vi P137/main.cpp 
+ 1436  vi P128/main.cpp 
+ 1437  vi P129/main.cpp 
+ 1438  vi P129/Makefile 
+ 1439  pwd
+ 1440  vi P129/main.cpp 
+ 1441  vi P128/main.cpp 
+ 1442  vi P129/main.cpp 
+ 1443  vi P130/main.cpp 
+ 1444  ll
+ 1445  vi P135/main.cpp 
+ 1446  vi P127/main.cpp 
+ 1447  vi P128/main.cpp 
+ 1448  vi P129/main.cpp 
+ 1449  vi P130/main.cpp 
+ 1450  vi P135/main.cpp 
+ 1451  vi P136/main.cpp 
+ 1452  vi P137/main.cpp 
+ 1453  cd P140/
+ 1454  vi main.cpp 
+ 1455  cd ..
+ 1456  vi P138/main.cpp 
+ 1457  vi P137/main.cpp 
+ 1458  ls 0lrt
+ 1459  ls -lrt
+ 1460  vi P127/main.cpp 
+ 1461  vi P128/main.cpp 
+ 1462  cd ../
+ 1463  ll
+ 1464  cd guessing_number_game/
+ 1465  ll
+ 1466  cd 3d
+ 1467  cd 3rd_version/
+ 1468  ll
+ 1469  vi main.cpp 
+ 1470  cd 
+ 1471  cd Programs/c_plus_plus_task/guessing_number_game/
+ 1472  ll
+ 1473  mkdir 1st_version 
+ 1474  cd 1st_version/
+ 1475  ll
+ 1476  vi main.cpp
+ 1477  vi main.cpp 
+ 1478  g++ -c main.cpp -o main.o
+ 1479  g++ main.o -o program 
+ 1480  ll
+ 1481  ./program 
+ 1482  vi main.cpp 
+ 1483  ll
+ 1484  cd ..
+ 1485  ll
+ 1486  mkdir 2nd_version 
+ 1487  cd 2nd_version/
+ 1488  ll
+ 1489  vi ../1st_version/main.cpp 
+ 1490  vi main.cpp
+ 1491  g++ -c main.cpp -o main.o
+ 1492  vi main.cpp
+ 1493  g++ -c main.cpp -o main.o
+ 1494  vi main.cpp
+ 1495  g++ -c main.cpp -o main.o
+ 1496  vi main.cpp
+ 1497  g++ -c main.cpp -o main.o
+ 1498  vi main.cpp
+ 1499  g++ -c main.cpp -o main.o
+ 1500  vi main.cpp
+ 1501  g++ -c main.cpp -o main.o
+ 1502  vi main.cpp
+ 1503  g++ -c main.cpp -o main.o
+ 1504  vi main.cpp
+ 1505  ll
+ 1506  g++ main.o -o program 
+ 1507  ll
+ 1508  ./program 
+ 1509  vi main.cpp
+ 1510  ./program 
+ 1511  vi main.cpp
+ 1512  g++ main.o -o program 
+ 1513  g++ main.cpp  =o main.o
+ 1514  g++ main.cpp  -o main.o
+ 1515  vi main.cpp 
+ 1516  g++ main.cpp  -o main.o
+ 1517  ll
+ 1518  rm main.o program 
+ 1519  g++ -c main.cpp  -o main.o
+ 1520  g++ main.o -o program 
+ 1521  ll
+ 1522  ./program 
+ 1523  vi main.cpp 
+ 1524  ll
+ 1525  g++ -c main.cpp  -o main.o
+ 1526  vi main.cpp 
+ 1527  g++ -c main.cpp  -o main.o
+ 1528  vi main.cpp 
+ 1529  g++ -c main.cpp  -o main.o
+ 1530  vi main.cpp 
+ 1531  vi getInput.cpp
+ 1532  g++ -c main.cpp  -o main.o
+ 1533  vi main.cpp 
+ 1534  g++ -c main.cpp  -o main.o
+ 1535  vi main.cpp 
+ 1536  vi getInput.cpp 
+ 1537  g++ -c main.cpp  -o main.o
+ 1538  vi PlayGame.cpp 
+ 1539  g++ -c main.cpp  -o main.o
+ 1540  g++ main.o -o program 
+ 1541  ./program 
+ 1542  ll
+ 1543  vi main.cpp 
+ 1544  cp main.cpp  main.cppbak
+ 1545  ll
+ 1546  vi main.cpp
+ 1547  g++ main.o -o program 
+ 1548  g++ -c main.cpp  -o main.o
+ 1549  g++ main.o -o program 
+ 1550  ./program 
+ 1551  ll
+ 1552  vi main.cpp
+ 1553  ll
+ 1554  cd ..
+ 1555  ll
+ 1556  ls
+ 1557  ll
+ 1558  cd 1st_version/
+ 1559  ll
+ 1560  vi main.cpp 
+ 1561  ./program 
+ 1562  ll
+ 1563  vi main.cpp 
+ 1564  cd ../2nd_version/
+ 1565  ll
+ 1566  vi main.cpp
+ 1567  vi PlayGame.cpp 
+ 1568  cd ../../../../
+ 1569  ll
+ 1570  cd GEANT4/test/
+ 1571  cd toymodel/
+ 1572  cd src/
+ 1573  ll
+ 1574  vi SensitiveDetector.cc 
+ 1575  vo SensitiveDetector.cc 
+ 1576  vi SensitiveDetector.cc 
+ 1577  cd ../../.././
+ 1578  cd ../Programs/tCompile/src/
+ 1579  ll
+ 1580  vi Class1.cpp 
+ 1581  cd ..
+ 1582  ll
+ 1583  vi main.cpp 
+ 1584  pwd
+ 1585  cd src/
+ 1586  ll
+ 1587  vi Class1.cpp 
+ 1588  vi ../include/Class1.h 
+ 1589  vi Class1.cpp 
+ 1590  vi ../include/Class1.h 
+ 1591  vi Class1.cpp 
+ 1592  ll ..
+ 1593  vi Class1.cpp 
+ 1594  cd ..
+ 1595  vi README 
+ 1596  cd ../
+ 1597  ll
+ 1598  cd argv_argc/
+ 1599  ls
+ 1600  vi main.cpp 
+ 1601  cd ..
+ 1602  cd construct_function/
+ 1603  ls
+ 1604  ll
+ 1605  cd ../
+ 1606  ll
+ 1607  cd construct_function/
+ 1608  ll
+ 1609  cd ..
+ 1610  ll
+ 1611  rm construct_function/
+ 1612  rm -r construct_function/
+ 1613  ll
+ 1614  cd c_plus_plus_task/
+ 1615  ll
+ 1616  cd guessing_number_game/
+ 1617  ll
+ 1618  cd 2nd_version/
+ 1619  ll
+ 1620  ./program 
+ 1621  ll
+ 1622  vi main.cpp
+ 1623  vi getInput.cpp 
+ 1624  vi main.cpp
+ 1625  vi PlayGame.cpp 
+ 1626  cd ../1st_version/
+ 1627  l
+ 1628  ll
+ 1629  vi main.cpp 
+ 1630  cd ../../../../GEANT4/test/toymodel/include/
+ 1631  ls
+ 1632  vi SensitiveDetector.hh 
+ 1633  ll
+ 1634  cd ..
+ 1635  ll
+ 1636  vi exampleB1.cc 
+ 1637  cd build/
+ 1638  ll
+ 1639  vmake ..
+ 1640  cmake ..
+ 1641  make -j3
+ 1642  ./exampleB1 
+ 1643  source  ../../../geant4.10.07.p01-install3/bin/geant4.sh 
+ 1644  ./exampleB1 
+ 1645  ll
+ 1646  cd ..
+ 1647  ll
+ 1648  vi exampleB1.cc 
+ 1649  vi src/B1DetectorConstruction.cc 
+ 1650  cd src/
+ 1651  ll
+ 1652  vi B1PrimaryGeneratorAction.cc 
+ 1653  ll
+ 1654  cd ~
+ 1655  ks
+ 1656  cd Programs/c_plus_plus_task/calculate_area/
+ 1657  ll
+ 1658  vi main.cpp
+ 1659  vi .main.cpp.swp 
+ 1660  rm .main.cpp.swp 
+ 1661  ll
+ 1662  vi main.cpp
+ 1663  vi include/Shape.h 
+ 1664  make 
+ 1665  vi main.cpp
+ 1666  make 
+ 1667  vi main.cpp
+ 1668  make 
+ 1669  vi main.cpp
+ 1670  make 
+ 1671  vi include/Shape.h 
+ 1672  v main.cpp
+ 1673  vi main.cpp
+ 1674  vi include/
+ 1675  vi main.cpp
+ 1676  mkae 
+ 1677  make 
+ 1678  vi main.cpp
+ 1679  ll
+ 1680  mv main.cpp main.cppbak1
+ 1681  vi main.cppbak main.cpp
+ 1682  mv main.cppbak main.cpp
+ 1683  ll
+ 1684  mv Makefile Makefilebak
+ 1685  mv Makefilebak1 Makefile
+ 1686  ll
+ 1687  vi main.cpp
+ 1688  make 
+ 1689  ./program 
+ 1690  ll
+ 1691  make clean 
+ 1692  ll
+ 1693  vi README 
+ 1694  ll
+ 1695  vi main.cpp
+ 1696  cd ..
+ 1697  ll
+ 1698  cd calculate_area/
+ 1699  ll
+ 1700  vi main.cpp
+ 1701  mkdir bak1
+ 1702  mv main.cpp bak1/
+ 1703  ll
+ 1704  cd bak1
+ 1705  ll
+ 1706  vi main.cpp 
+ 1707  cp ../Makefile .
+ 1708  ll
+ 1709  make 
+ 1710  ./program 
+ 1711  cd ..
+ 1712  ll
+ 1713  mv main.cppbak1 main.cpp
+ 1714  ll
+ 1715  mv Makefilebak  Makefile
+ 1716  ll
+ 1717  rm README 
+ 1718  ll
+ 1719  vi main.cpp 
+ 1720  mak e
+ 1721  make 
+ 1722  vi src/Shape.cpp 
+ 1723  make 
+ 1724  vi src/Shape.cpp 
+ 1725  make 
+ 1726  vi src/Shape.cpp 
+ 1727  make 
+ 1728  vi src/Shape.cpp 
+ 1729  ll
+ 1730  cd bak1/
+ 1731  ll
+ 1732  maker 
+ 1733  make 
+ 1734  ./program 
+ 1735  vi main.cpp 
+ 1736  cp main.cpp  main.cppbak
+ 1737  ll
+ 1738  vi main.cppbak 
+ 1739  vi main.cpp
+ 1740  make 
+ 1741  vi main.cpp
+ 1742  make 
+ 1743  ./program 
+ 1744  ll
+ 1745  vi main.cpp
+ 1746  make 
+ 1747  ./program 
+ 1748  vi main.cpp
+ 1749  make 
+ 1750  ./program 
+ 1751  vi main.cpp
+ 1752  make 
+ 1753  vi main.cpp
+ 1754  make 
+ 1755  vi main.cpp
+ 1756  make 
+ 1757  vi main.cpp
+ 1758  make 
+ 1759  vi main.cpp
+ 1760  make 
+ 1761  vi main.cpp
+ 1762  make 
+ 1763  vi main.cpp
+ 1764  make 
+ 1765  vi main.cpp
+ 1766  ll
+ 1767  cp main.cpp main.cppbaknew
+ 1768  ll
+ 1769  vi main.cpp
+ 1770  make 
+ 1771  vi main.cpp
+ 1772  make 
+ 1773  vi main.cpp
+ 1774  make
+ 1775  vi main.cpp
+ 1776  make
+ 1777  ./program 
+ 1778  vi main.cpp
+ 1779  cd ../../..
+ 1780  ll
+ 1781  cd c_plus_plus_task/
+ 1782  ll
+ 1783  cd examples_from_heima/
+ 1784  ll
+ 1785  cd P129/
+ 1786  ll
+ 1787  vi main.cpp 
+ 1788  cd ..
+ 1789  ll
+ 1790  vi P130/main.cpp 
+ 1791  ll
+ 1792  vi P131/main.cpp 
+ 1793  vi P135/main.cpp 
+ 1794  cd P135/
+ 1795  make 
+ 1796  ./program 
+ 1797  vi main.cpp 
+ 1798  cd ..
+ 1799  ll
+ 1800  cd P137/
+ 1801  ll
+ 1802  vi main.cpp 
+ 1803  make 
+ 1804  ./program 
+ 1805  vi main.cpp 
+ 1806  ls
+ 1807  ll
+ 1808  cd HPGeFolder_build
+ 1809  cmake //
+ 1810  cmake ..
+ 1811  ll
+ 1812  ls
+ 1813  cd ..
+ 1814  lll
+ 1815  ll
+ 1816  cd ..
+ 1817  ll
+ 1818  ls -lrt
+ 1819  cd GEANT4_HPGe_Simulaton-master/
+ 1820  ls
+ 1821  ll
+ 1822  cd HPGeFolder
+ 1823  ls
+ 1824  ll
+ 1825  cd build/
+ 1826  cmake ..
+ 1827  make -j3
+ 1828  ll
+ 1829  source ../../../../geant4.10.07.p01-install3/bin/geant4.sh 
+ 1830  ll
+ 1831  ./exampleB4a 
+ 1832  ll
+ 1833  cd ..
+ 1834  ll
+ 1835  ls
+ 1836  cd ..
+ 1837  ll
+ 1838  vi readme.md 
+ 1839  ls
+ 1840  cd HPGeFolder
+ 1841  ls
+ 1842  ll
+ 1843  ls
+ 1844  root plotNtuple.C 
+ 1845  ls
+ 1846  vi exampleB4a.cc 
+ 1847  ls
+ 1848  cd build/
+ 1849  cmake ..
+ 1850  make 
+ 1851  ./exampleB4a 
+ 1852  cd ../..
+ 1853  ls
+ 1854  ll
+ 1855  cd ..
+ 1856  ll
+ 1857  ls -lrt
+ 1858  cd HPGe_simulation-master/
+ 1859  ls
+ 1860  ll
+ 1861  ls -lrt
+ 1862  cd build/
+ 1863  ll
+ 1864  cmake ..
+ 1865  make -j3
+ 1866  vi ../src/HistoManager.cc 
+ 1867  make -j3
+ 1868  ls
+ 1869  cd bu
+ 1870  ls
+ 1871  pwd
+ 1872  cd ../../Programs/c_plus_plus_task/
+ 1873  ls
+ 1874  cd calculate_area/test/
+ 1875  ld
+ 1876  ls
+ 1877  make 
+ 1878  ./program 
+ 1879  make 
+ 1880  ./program 
+ 1881  mkdir more_advanced
+ 1882  cp -r include/ src/ Makefile  main.cpp  more_advanced/
+ 1883  cd more_advanced/
+ 1884  ll
+ 1885  ls
+ 1886  make 
+ 1887  ./program 
+ 1888  ls
+ 1889  cd include/
+ 1890  ls
+ 1891  cp Shape.h Square.h
+ 1892  cd ../src/
+ 1893  ls
+ 1894  cp Shape.cpp  Square.cpp 
+ 1895  ls
+ 1896  make 
+ 1897  ls
+ 1898  cd ..
+ 1899  ls
+ 1900  vi Makefile 
+ 1901  make 
+ 1902  ./program 
+ 1903  make 
+ 1904  ll
+ 1905  make clean 
+ 1906  ll
+ 1907  make 
+ 1908  ll
+ 1909  cp Makefile  Makefilebak
+ 1910  ll
+ 1911  make 
+ 1912  vi Makefile
+ 1913  make 
+ 1914  cd ~/GEANT4/test/
+ 1915  ls
+ 1916  ll
+ 1917  ls -lrt
+ 1918  ls
+ 1919  mkdir P85
+ 1920  cd P85
+ 1921  ll
+ 1922  cp ../P111/main.cpp .
+ 1923  cp ../P111/Makefile .
+ 1924  ll
+ 1925  vi main.cpp 
+ 1926  make 
+ 1927  cd ~/
+ 1928  ls
+ 1929  cd GEANT4/
+ 1930  ls
+ 1931  cd ..
+ 1932  ls
+ 1933  cd ~
+ 1934  ls
+ 1935  mkdir Geant4-Work
+ 1936  cd Geant4-Work/
+ 1937  git clone git@github.com:warren19932021/B1Work.git
+ 1938  cd ..
+ 1939  git
+ 1940  ssh-keygen -t ed25519 -C "hexianke2020@gmail.com"
+ 1941  ls
+ 1942  ls .ssh
+ 1943  rm id_github id_github.pub 
+ 1944  ls
+ 1945  ssh-keygen -t ed25519 -C "hexianke2020@gmail.com"
+ 1946  ls
+ 1947  ls  .ssh
+ 1948  vi .ssh/
+ 1949  vi .ssh/id_github.pub 
+ 1950  ls
+ 1951  cd Geant4-Work/
+ 1952  ls
+ 1953  git clone git@github.com:warren19932021/B1Work.git
+ 1954  ls
+ 1955  cd B1Work/
+ 1956  ls
+ 1957  ll
+ 1958  vi README 
+ 1959  ls
+ 1960  cd ..
+ 1961  ls
+ 1962  mkdir builds
+ 1963  ls
+ 1964  ll
+ 1965  cd  builds/
+ 1966  mkdir B1Work
+ 1967  cd B1Work/
+ 1968  cmake ../../B1Work/ 
+ 1969  vi ~/.bashrc 
+ 1970  cmake ../../B1Work/ 
+ 1971  echo $CMAKEPATH
+ 1972  which cmake 
+ 1973  echo $PATH
+ 1974  echo $ROOTSYS
+ 1975  root 
+ 1976  echo $PATH
+ 1977  echo $G4INSTALLDIR
+ 1978  vi ~/.bashrc 
+ 1979  cd ~/Geant4-Work/
+ 1980  cd builds/
+ 1981  ls
+ 1982  cd B1Work/
+ 1983  ls
+ 1984  cd ..
+ 1985  ll
+ 1986  cd ..
+ 1987  ll
+ 1988  cd builds/
+ 1989  ls
+ 1990  cd B1Work/
+ 1991  ls
+ 1992  cmake ../../B1Work/
+ 1993  make -j8
+ 1994  ./exampleB1 
+ 1995  ./exampleB1 run1.mac 
+ 1996  ll
+ 1997  lls -lrt
+ 1998  ls -lrt
+ 1999  root out.root 
+ 2000  cd ../builds/B1Work/
+ 2001  ./exampleB1 
+ 2002  grep -r "hits with total E"
+ 2003  grep -r "hits with"
+ 2004  cd ../../B1Work/
+ 2005  grep -r "hits with" .
+ 2006  git status 
+ 2007  git add run1.mac src/B1EventAction.cc 
+ 2008  git status 
+ 2009  git commit -m "remove output"
+ 2010  git status 
+ 2011  git config --global user.email "hexianke2020@gmail.com"
+ 2012  git commit -m "remove output"
+ 2013  git status 
+ 2014  git push 
+ 2015  ll
+ 2016  git pull
+ 2017  git status
+ 2018  git diff
+ 2019  git checkout -- src/B1EventAction.cc
+ 2020  git status
+ 2021  git checkout --
+ 2022  git status
+ 2023  git stash
+ 2024  git status
+ 2025  history >> 22092021command.txt
